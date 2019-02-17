@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <%= form_with(model: import, local: true, multipart: true) do |form| %>
+        <% if import.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(import.errors.count, "error") %> prohibited this import from being saved:</h2>
+
+            <ul>
+            <% import.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="custom-file">
+          <%= file_field_tag 'sheet' %>
+          <label class="custom-file-label" for="customFile">Select completed sheet</label>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

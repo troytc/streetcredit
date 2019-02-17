@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row align-items-center justify-content-around">
+    <div class="col-6">
+      <%= form_with(model: @import, local: true, multipart: true) do |form| %>
+        <% if @import.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(@import.errors.count, "error") %> prohibited this import from being saved:</h2>
+
+            <ul>
+            <% @import.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group mb-4">
+          <div class="custom-file">
+            <%= file_field_tag 'sheet', class: 'custom-file-input' %>
+            <label class="custom-file-label" for="customFile">Click to select completed sheet...</label>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= form.submit 'Upload', class: 'btn btn-block btn-lg btn-primary mb-3' %>
+          <%= link_to 'Back', imports_url, class: 'btn btn-block btn-sm btn-light' %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

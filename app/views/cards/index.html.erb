@@ -1,0 +1,28 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th width="15%" scope="col">Card</th>
+            <th scope="col">Cashback Percentage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cards.each do |card| %>
+            <tr>
+              <td><i class="material-icons">credit_card</i> <%= card.nickname %></td>
+              <td>
+                <% unless card.rewards.nil? %>
+                  <% card.rewards.each do |reward| %>
+                    <span class="chip mb-2"><i class="chip-icon"><%= reward["cashback"].to_f * 100 %></i><%= reward["category"] %></span>
+                  <% end %>
+                <% end %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

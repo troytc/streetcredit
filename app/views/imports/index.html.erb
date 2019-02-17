@@ -1,0 +1,80 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Download the Excel App</h5>
+          <p class="card-text">This allows all your transaction processing to be performed on your computer.</p>
+        </div>
+        <div class="list-group list-group-flush" id="accordionTwo">
+          <div class="expansion-panel list-group-item">
+            <a aria-controls="collapseFour" aria-expanded="false" class="expansion-panel-toggler collapsed" data-toggle="collapse" href="#collapseFour" id="headingFour">
+              <strong class="text-danger">Before you begin</strong>
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <div aria-labelledby="headingFour" class="collapse" data-parent="#accordionTwo" id="collapseFour">
+              <div class="expansion-panel-body">
+                <p>You will need the following before loading your transactions:</p>
+                <ul>
+                  <li>Excel 2007 or higher installed on your local computer</li>
+                  <li>A copy of your bank statement in .csv format</li>
+                </ul>
+                <p class="mb-0">If your bank doesn't offer .csv export, or you don't have the file at hand right now, download our <%= link_to 'sample file', '#' %>.</p>
+              </div>
+            </div>
+          </div>
+          <div class="expansion-panel list-group-item">
+            <a aria-controls="collapseFive" aria-expanded="false" class="expansion-panel-toggler collapsed" data-toggle="collapse" href="#collapseFive" id="headingFive">
+              Download and run the workbook
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <div aria-labelledby="headingFive" class="collapse" data-parent="#accordionTwo" id="collapseFive">
+              <div class="expansion-panel-body">
+                <%= link_to raw('<i class="material-icons">cloud_download</i> Download Excel App .xlsm'), '#', class: 'btn btn-block btn-lg btn-success mb-4' %>
+                <p>After downloading and opening the workbook, you may have to leave "protected view":</p>
+                <%= image_tag 'protectedview.png', class: 'mb-3' %>
+                <p>You might also have to "enable content":</p>
+                <%= image_tag 'enablecontent.png', class: 'mb-3' %>
+              </div>
+            </div>
+          </div>
+          <div class="expansion-panel list-group-item">
+            <a aria-controls="collapseSix" aria-expanded="false" class="expansion-panel-toggler collapsed" data-toggle="collapse" href="#collapseSix" id="headingFive">
+              Upload your results for advanced analytics
+              <div class="expansion-panel-icon ml-3 text-black-secondary">
+                <i class="collapsed-show material-icons">keyboard_arrow_down</i>
+                <i class="collapsed-hide material-icons">keyboard_arrow_up</i>
+              </div>
+            </a>
+            <div aria-labelledby="headingSix" class="collapse" data-parent="#accordionTwo" id="collapseSix">
+              <div class="expansion-panel-body">
+                <p>After using the Excel App, you can upload it here for some good looking graphs and statistics.</p>
+                <%= link_to 'New Upload', new_import_url, class: 'btn btn-lg btn-primary' %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5">
+    <div class="col text-center">
+      <h4 class="mb-0">OR</h4>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-muted">Connect your Bank Account (coming soon)</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<nav class="navbar navbar-dark bg-primary mb-5">
+  <div class="container">
+    <%= link_to 'StreetCredit', root_url, class: 'navbar-brand' %>
+    <ul class="navbar-nav mr-auto">
+      <!-- <li class="nav-item">
+        <%= link_to 'Cards', cards_url, class: 'nav-link' %>
+      </li> -->
+    </ul>
+    <ul class="navbar-nav">
+      <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.email %></a>
+          <div class="dropdown-menu">
+            <%= link_to 'Sign Out', destroy_user_session_url, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to 'Sign In', new_user_session_url, class: 'nav-link' %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
